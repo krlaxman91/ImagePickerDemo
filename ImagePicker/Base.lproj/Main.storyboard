@@ -1,25 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sNo-x4-K1K">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Image Picker -->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImagePicker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ia7-UN-Fqz">
+                                <rect key="frame" x="39" y="150" width="240" height="214"/>
+                                <color key="backgroundColor" red="0.73725490199999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzt-xN-uSW">
+                                <rect key="frame" x="39" y="421" width="240" height="30"/>
+                                <color key="backgroundColor" red="0.74901960784313726" green="0.0" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Choose Image">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseImageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yHx-MI-P9K"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ia7-UN-Fqz" firstAttribute="trailing" secondItem="Fzt-xN-uSW" secondAttribute="trailing" id="bQR-p3-ufG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fzt-xN-uSW" secondAttribute="trailing" constant="25" id="ffa-zu-Ebn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Fzt-xN-uSW" secondAttribute="bottom" constant="117" id="gyT-jJ-sg2"/>
+                            <constraint firstItem="Fzt-xN-uSW" firstAttribute="top" secondItem="Ia7-UN-Fqz" secondAttribute="bottom" constant="57" id="mA0-Vg-ee4"/>
+                            <constraint firstItem="Fzt-xN-uSW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="23" id="plv-n1-vXJ"/>
+                            <constraint firstItem="Ia7-UN-Fqz" firstAttribute="leading" secondItem="Fzt-xN-uSW" secondAttribute="leading" id="qkd-88-wga"/>
+                            <constraint firstItem="Ia7-UN-Fqz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="86" id="tDJ-vb-hSZ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Image Picker " id="I2d-tu-rw1"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="btnClickMe" destination="Fzt-xN-uSW" id="wHr-Hv-G8E"/>
+                        <outlet property="imageView" destination="Ia7-UN-Fqz" id="iGj-kT-pn9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1281" y="415"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LFL-oe-H9y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sNo-x4-K1K" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="coG-fA-dod">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LEw-kS-1Zl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xKO-Wv-Zmu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807" y="415"/>
         </scene>
     </scenes>
 </document>
